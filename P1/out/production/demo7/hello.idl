@@ -1,0 +1,5 @@
+module hw{
+    interface HWInterface{
+        string sayHello(in string message);
+    };
+};
