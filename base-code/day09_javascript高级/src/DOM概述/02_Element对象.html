@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Element对象</title>
+</head>
+<body>
+    <a>点击此处有惊喜</a><br>
+    <input type="button" id="btn_set" value="设置属性">
+    <input type="button" id="btn_rem" value="设置属性">
+    <script>
+        var btn_set = document.getElementById("btn_set");
+        btn_set.onclick = function () {
+            var element_a = document.getElementsByTagName("a")[0];
+            element_a.setAttribute("href", "https://baidu.com");
+        }
+
+        var btn_rem = document.getElementById("btn_rem");
+        btn_rem.onclick = function () {
+            var element_a = document.getElementsByTagName("a")[0];
+            element_a.removeAttribute("href");
+        }
+    </script>
+</body>
+</html>

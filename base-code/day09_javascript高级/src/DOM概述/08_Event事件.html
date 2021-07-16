@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script>
+        //等待窗口加载完成事件
+        window.onload = function () {
+            let element = document.getElementById("text");
+
+            element.onfocus = function () {
+                alert("获取到了焦点");
+            }
+
+            element.onblur = function () {
+                //用于检测表单项
+                alert("失去了焦点");
+            }
+
+            // element.onmouseover =function () {
+            //     alert("鼠标来了");
+            // }
+
+            element.onmousedown = function (event) {
+                //0左，1中，2右
+                alert(event.button);
+            }
+
+            // element.onmousemove = function () {
+            //     alert("haha");
+            // }
+
+            element.onkeydown = function (event) {
+                if (event.keyCode == 13){
+                    alert("提交表单");
+                }
+            }
+
+            let form = document.getElementById("form");
+
+            //可以阻止表单的提交,方法返回boolean
+            form.onsubmit = function () {
+                let flag = true;
+                //判断语句
+                return flag;
+            }
+        }
+    </script>
+</head>
+<body>
+
+<!-- <form action='#' id="form" onsubmit="return checkForm();">-->
+<form action="#" id="form">
+
+    <input name="username" id="text">
+    <input type="submit" id="sub" value="提交">
+</form>
+
+</body>
+</html>

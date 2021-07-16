@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格全选</title>
+    <style>
+        div{
+            margin-top: 10px;
+            margin-left: 34%;
+        }
+        table{
+            border: 1px solid;
+            margin: auto;
+            width: 500px;
+        }
+        td,th{
+            text-align: center;
+            border: 1px solid;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            //全选
+            document.getElementById("select_all").onclick = function () {
+                let cbs = document.getElementsByName("cb");
+                for (let i = 0; i < cbs.length; i++) {
+                    cbs[i].checked = true;
+                }
+            }
+
+            //全不选
+            document.getElementById("unselect_all").onclick = function () {
+                let cbs = document.getElementsByName("cb");
+                for (let i = 0; i < cbs.length; i++) {
+                    cbs[i].checked = false;
+                }
+            }
+
+            //反选
+            document.getElementById("selectRev").onclick = function () {
+                let cbs = document.getElementsByName("cb");
+                cbs[0].checked = true;
+                for (let i = 1; i < cbs.length; i++) {
+                    cbs[i].checked = !cbs[i].checked;
+                    if (!cbs[i].checked){
+                        cbs[0].checked = false;
+                    }
+                }
+            }
+
+            //全选钩
+            document.getElementById("first").onclick = function () {
+                let cbs = document.getElementsByName("cb");
+                for (let i = 1; i < cbs.length; i++) {
+                    cbs[i].checked = cbs[0].checked;
+                }
+            }
+
+            //表单颜色变化
+            let trs = document.getElementsByTagName("tr");
+            for (let i = 0; i < trs.length; i++) {
+                trs[i].onmouseover = function () {
+                    trs[i].style.background = "pink";
+                }
+
+                trs[i].onmouseout = function () {
+                    trs[i].style.background = "white";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <caption>学生信息表</caption>
+        <tr>
+            <th><input type="checkbox" name="cb" id="first"></th>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cb"></td>
+            <td>1</td>
+            <td>张三</td>
+            <td>男</td>
+            <td><a href="javascript:void(0);" onclick="del_tr(this);">删除</a></td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" name="cb"></td>
+            <td>2</td>
+            <td>李四</td>
+            <td>女</td>
+            <td><a href="javascript:void(0);" onclick="del_tr(this);">删除</a></td>
+        </tr>
+    </table>
+    <div>
+        <input type="button" value="全选" id="select_all">
+        <input type="button" value="全不选" id="unselect_all">
+        <input type="button" value="反选" id="selectRev">
+    </div>
+</body>
+</html>

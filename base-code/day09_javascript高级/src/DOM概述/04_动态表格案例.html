@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态表格</title>
+    <style>
+        div{
+            text-align: center;
+            margin: 50px;
+        }
+        table{
+            border: 1px solid;
+            margin: auto;
+            width: 500px;
+        }
+        td,th{
+            text-align: center;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="编号" id="id">
+        <input type="text" placeholder="姓名" id="name">
+        <input type="text" placeholder="性别" id="gender">
+        <input type="button" value="添加" id="btn_add">
+    </div>
+    <table>
+        <caption>学生信息表</caption>
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>男</td>
+            <td><a href="javascript:void(0);" onclick="del_tr(this);">删除</a></td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>女</td>
+            <td><a href="javascript:void(0);" onclick="del_tr(this);">删除</a></td>
+        </tr>
+    </table>
+    <script>
+        let add = document.getElementById("btn_add");
+        add.onclick = function () {
+            let id = document.getElementById("id").value;
+            let name = document.getElementById("name").value;
+            let gender = document.getElementById("gender").value;
+            if (!id || !name || !gender){
+                alert("请填写完整信息")
+            }else {
+                /*
+                //设置id
+                let td_id = document.createElement("td");
+                let text_id = document.createTextNode(id);
+                td_id.appendChild(text_id);
+                //设置name
+                let td_name = document.createElement("td");
+                let text_name = document.createTextNode(name);
+                td_name.appendChild(text_name);
+                //设置gender
+                let td_gender = document.createElement("td");
+                let text_gender = document.createTextNode(gender);
+                td_gender.appendChild(text_gender);
+                //设置a
+                let ele_a = document.createElement("a");
+                ele_a.setAttribute("href", "javascript:void(0);");
+                ele_a.setAttribute("onclick", "del_tr(this);");
+                let text_a = document.createTextNode("删除");
+                ele_a.appendChild(text_a);
+                //添加a
+                let td_a = document.createElement("td");
+                td_a.appendChild(ele_a);
+
+                let tr = document.createElement("tr");
+                tr.appendChild(td_id);
+                tr.appendChild(td_name);
+                tr.appendChild(td_gender);
+                tr.appendChild(td_a);
+
+                let table = document.getElementsByTagName("table")[0];
+                table.appendChild(tr);*/
+
+                //简单操作
+                let table = document.getElementsByTagName("table")[0];
+                table.innerHTML += "<td>"+id+"</td>\n" +
+                    "            <td>"+name+"</td>\n" +
+                    "            <td>"+gender+"</td>\n" +
+                    "            <td><a href=\"javascript:void(0);\" onclick=\"del_tr(this);\">删除</a></td>";
+            }
+        }
+
+        function del_tr(obj) {
+            let table = obj.parentNode.parentNode.parentNode;
+            let tr = obj.parentNode.parentNode;
+            table.removeChild(tr);
+        }
+    </script>
+</body>
+</html>

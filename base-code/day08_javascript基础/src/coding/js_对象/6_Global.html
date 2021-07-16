@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Global对象</title>
+    <script>
+        /*
+         decodeURI()  ： 解码某个编码的 URI。
+    ​	 encodeURI() ： 把字符串编码为 URI。
+​	     decodeURIComponent() ： 解码一个编码的 URI 组件。编码更多，如：“：”，“/"等
+    ​	 encodeURIComponent() ： 把字符串编码为 URI 组件。
+         isNaN ()： 检查某个值是否是数字。 NaN和任何变量在==中比较，都返回false
+    ​	 eval():  将JavaScript 字符串，并把它作为脚本代码来执行。
+         */
+        var str = "https://baidu.com/wd=创智播客";
+        var code = encodeURI(str);
+        document.write(code + "<br>");  //https://baidu.com/wd=%E5%88%9B%E6%99%BA%E6%92%AD%E5%AE%A2
+        var s = decodeURI(code);
+        document.write(s + "<br>");     //https://baidu.com/wd=创智播客
+
+        var str1 = "https://baidu.com/wd=创智播客";
+        var code1 = encodeURIComponent(str1);
+        document.write(code1 + "<br>");  //https%3A%2F%2Fbaidu.com%2Fwd%3D%E5%88%9B%E6%99%BA%E6%92%AD%E5%AE%A2
+        var s1 = decodeURIComponent(code1);
+        document.write(s1 + "<br>");     //传智播客
+
+
+        var str2 = "123abc";
+        let number = parseInt(str2);
+        alert(number+1);
+
+        var ss = "alert(1234)";
+        eval(ss);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

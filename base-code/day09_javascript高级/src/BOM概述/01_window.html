@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window弹出</title>
+    <script>
+        /*
+        window对象：
+            1.创建
+            2.方法
+                1.与弹出框有关方法：
+                    1.alert()   显示带有一段消息和一个确认按钮的警告框。
+                    2.confirm()	显示带有一段消息以及确认按钮和取消按钮的对话框。
+                    3.prompt()	显示可提示用户输入的对话框。
+                2.与打开关闭有关的方法
+                    1.close()	关闭浏览器窗口。
+                        谁调用关闭谁
+                    2.open()	打开一个新的浏览器窗口或查找一个已命名的窗口。
+                        传入参数为URL，返回一个window对象
+                3.与定时器有关的方法
+                    setTimeout()	在指定的毫秒数后调用函数或计算表达式。  //单次定时器
+                        参数：
+                            1.js代码语句
+                            2.毫秒数
+                         返回值：唯一标识，用于取消定时器
+                    clearTimeout()	取消由 setTimeout() 方法设置的 timeout。
+
+                    setInterval()	按照指定的周期（以毫秒计）来调用函数或计算表达式。//循环定时器
+                    clearInterval()	取消由 setInterval() 设置的 timeout。
+            3.属性
+            4.特点
+                无需创建，直接使用。 window.方法名（）;
+                window可省略。方法名();
+         */
+        var flag = confirm("宁确定要退出吗？");
+        if (flag){
+            alert("欢迎下次光临");
+            close();
+        }else {
+            alert("小心点，别手抖了");
+        }
+
+        function fun1() {
+            alert("boom~~~");
+        }
+        setTimeout(fun1, 3000);
+        var id = setInterval(fun1, 1000);
+        clearInterval(id);
+    </script>
+</head>
+<body>
+    <input id="openb" value="打开窗口" type="button">
+    <input id="closeb" value="关闭窗口" type="button">
+    <script>
+        var openbtn = document.getElementById("openb");
+        var closebn = document.getElementById("closeb");
+        var newwindow;
+        openbtn.onclick = function () {
+            newwindow = open("https://www.bilibili.com/");
+        }
+        closebn.onclick = function () {
+            newwindow.close();
+        }
+    </script>
+</body>
+</html>

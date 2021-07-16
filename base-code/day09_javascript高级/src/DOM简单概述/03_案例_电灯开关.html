@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电灯开关</title>
+</head>
+<body>
+    <img src="../../img/off.png" id="light">
+
+    <script>
+        var flag = false;
+        var element = document.getElementById("light");
+        function f1() {
+            if (flag){
+                element.src = "../../img/off.png";
+                flag = !flag;
+            }else {
+                element.src = "../../img/on.png";
+                flag = !flag;
+            }
+        }
+        element.onclick = f1;
+    </script>
+</body>
+</html>

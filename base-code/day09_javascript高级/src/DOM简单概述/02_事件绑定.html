@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+
+</head>
+<body>
+    <img src="../../img/off.png" id="light" onclick="fun();">
+    <img src="../../img/on.png" id="light2">
+    <script>
+        var i = 1;
+        function fun() {
+            alert("我被点击了");
+            alert(i)
+            i++;
+        }
+
+        function fun2() {
+            alert("我被点击了");
+            alert(i)
+            i++;
+        }
+        var element = document.getElementById("light2");
+        element.onclick = fun2;//方法后面没有括号
+    </script>
+</body>
+</html>
