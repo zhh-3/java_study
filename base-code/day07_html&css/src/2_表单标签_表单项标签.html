@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+<!--
+     表单项标签
+     input 可以通过改变type属性值，改变元素展示样式
+     type属性
+         text 文本输入框，默认值
+            placeholder 指定输入框提示信息，当输入框内容发生变化时，自动清空
+         password 密码输入框
+         radio 单选框
+            注意：
+                1.多个单选框实现单选效果，name属性要一致
+                2.给出每个单选框的value属性，作为传递时参数
+                3.checked属性可指定默认值
+         checkbox 复选框
+            注意：
+                1.给出每个复选框的value属性，作为传递时参数
+                2.checked属性可指定默认值
+          file：文件选择框
+          hidden 隐藏域
+          按钮
+                submit 提交按钮，可以提交表单
+                button 普通按钮
+                image  图片提交按钮，通过制定src指定图片
+     label属性:指定输入项的文字描述信息
+            注意：
+                label中的for属性一般要和input中的id属性对应。如果对应了，则点击label区域，会让input输入框获取焦点
+     select 下拉列表
+        子元素 option，指定列表项
+     textarea 文本域
+        cols 指定列数
+        rows 指定行数
+     表单项中数据想要被提交，必须指定name属性
+     -->
+<form action="#" method="get">
+    <label for="username">用户名：</label><input type="text" name="user" placeholder="请输入用户名" id="username"> <br>
+    密码：<input type="password" name="password" placeholder="请输入密码"><br>
+    性别: <input type="radio" name="gender" value="man" checked> 男
+    <input type="radio" name="gender" value="woman"> 女 <br>
+    爱好：
+    <input type="checkbox" name="hobby" value="shop"> 购物
+    <input type="checkbox" name="hobby" value="java" checked> java
+    <input type="checkbox" name="hobby" value="game"> 游戏 <br>
+    图片 <input type="file" name="file"><br>
+    隐藏域 <input type="hidden" name="id"><br>
+    取色器 <input type="color" value="color"><br>
+    生日 <input type="date" name="birthday"> <br>
+    生日 <input type="datetime-local" name="birthday2"> <br>
+    邮箱 <input type="email" name="email"><br>
+    年龄 <input type="number" name="age"><br>
+    省份 <select name="province">
+        <option>--请选择--</option>
+        <option value="1">湖北</option>
+        <option value="2">湖南</option>
+        <option value="3">广西</option>
+        </select><br>
+    自我介绍<br>
+    <textarea cols="20" rows="5" name="des"></textarea>
+    <br>
+    <input type="submit" value="登陆">
+    <input type="button" value="一个按钮"><br>
+    <input type="image" src="1.png"><br>
+</form>
+</body>
+</html>

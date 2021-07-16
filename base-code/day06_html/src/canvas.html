@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        canvas{
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="800" height="500" id="canvas">这是一个canvas</canvas>
+    <script>
+        var can = document.getElementById("canvas");
+        var ctx = can.getContext("2d");
+        ctx.fillRect(100,100,200,200);
+    </script>
+</body>
+</html>
