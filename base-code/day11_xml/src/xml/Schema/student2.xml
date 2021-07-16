@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.itcast.cn/xml student.xsd
+          xmlns="http://www.itcast.cn/xml">
+    <student number='0001'>
+        <name>杰少</name>
+        <age>18</age>
+        <sex>man</sex>
+    </student>
+</students>
